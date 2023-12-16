@@ -1,0 +1,24 @@
+.subscribe-section{
+    background: #00C3EE;
+    text-align: left;
+}
+.subscribe-header{
+    font-family: "Montserrat-Semibold";
+    font-size: 24px;
+}
+.subscribe-content{
+    font-size: 18px;
+    font-family: "Montserrat-Medium";
+}
+.subscribe-btn{
+    padding: 10px 25px;
+    width: 132px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 2px solid #00698A;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #00698A;
+
+}

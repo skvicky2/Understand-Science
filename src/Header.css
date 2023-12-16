@@ -1,0 +1,19 @@
+.nav-background{
+    background: #00698A;
+}
+.nav-link{
+    color:#fff !important;
+    padding:25px 82px !important;
+    font-family: "Montserrat-SemiBold";
+
+}
+.dropdown-toggle::after{
+    display: none !important; 
+}
+.navbar-toggler, .navbar-toggler:hover{
+    border: none !important;
+}
+/* .d-grid > .dropdown-menu{
+   
+ 
+} */
