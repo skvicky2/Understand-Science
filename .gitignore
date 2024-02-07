@@ -30,3 +30,5 @@
 /server/understand_science/media
 __pycache__
 /server/db.sqlite3
+
+/django-apprunner
