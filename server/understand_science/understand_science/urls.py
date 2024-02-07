@@ -20,15 +20,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 
-
 urlpatterns = [
     # path("", include("video_metadata.urls")),
     # path("admin/", admin.site.urls),
     path("", RedirectView.as_view(url=reverse_lazy("admin:index"))),
     path("admin/", admin.site.urls),
-    path("video_api/", include("video_metadata.urls")),
+    path("api/", include("video_metadata.urls")),
+    path("api/", include("contacts.urls")),
+    path("api/", include("contacts.urls")),
 ]
 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+admin.site.site_header = 'UTS 2.0 Adminstration'
+admin.site.index_title = 'Understand The Science'
+admin.site.site_title = 'Admin site for UTS 20'

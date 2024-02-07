@@ -21,9 +21,53 @@ Understand Science
     $ python manage.py startapp video_metadata
 
 
+REACT
+cd client
+npm install
+npm start
+
+DJANGO
+cd server
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python understand_science/manage.py runserver
 
 
-    
 
-    username: karthick 
-    password: password-1
+
+
+Scientist  Profile photo
+Video Metadata Thumbnail
+S3 hosting
+AWS access for App runner
+UI settigs Menu screen
+
+
+Author
+Type
+
+Category (disease)
+
+multi Author    
+
+Parent tag in tag page
+
+Start time format (MM.SS)
+
+Coming soon in add video
+
+Common settings (more static content in django)
+
+Dynamic Sponsors logo in django
+
+Download subscriber
+
+Add subscriber check box in contact us 
+
+Anonymous like and share in add video
+
+clicking "like" button shows dropdown with:
+- login
+- signup
+- like unnonymously

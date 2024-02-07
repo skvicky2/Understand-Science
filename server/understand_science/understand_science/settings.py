@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "django-env.eba-eyp4qyrb.us-west-2.elasticbeanstalk.com",
+    "http://uts-react-portal.s3-website-us-east-1.amazonaws.com/",
+    ".awsapprunner.com"
 ]
 
 
@@ -46,17 +48,21 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "uts.apps.UtsConfig",
+    "contacts.apps.ContactsConfig",
     "video_metadata.apps.VideoMetadataConfig",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "understand_science.urls"
@@ -134,8 +140,22 @@ MEDIA_URL = "media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media").replace("\\", "/")
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ORIGIN_ALLOW_ALL = True
+
